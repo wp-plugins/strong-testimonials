@@ -197,8 +197,11 @@ I will gladly help add your modifications to a custom version of Strong Testimon
 
 == Changelog ==
 
+= 1.7.3 = 
+* Fixed shortcode processing in widget content.
+
 = 1.7.2 = 
-Fixed the update process.
+* Fixed the update process.
 
 = 1.7.1 =
 * Fix for `Warning: Invalid argument supplied in foreach()` bugs.
@@ -264,6 +267,9 @@ Fixed the update process.
 * Initial version, a fork of GC Testimonials 1.3.2.
 
 == Upgrade Notice ==
+
+= 1.7.3 =
+Fixed shortcode processing in widget content.
 
 = 1.7.2 =
 Fixed the update process.
