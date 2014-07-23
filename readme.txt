@@ -20,9 +20,7 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes collecting a
 
 **Manage testimonials** just like posts and pages, including Featured Images and Categories.
 
-===
-
-Strong Testimonials is a **work in progress**.
+= Strong Testimonials is a **work in progress**. =
 
 This is my project for learning plugin development and sharpening my skills. It will always be free.
 
@@ -36,15 +34,13 @@ On the other hand, if you want
 
 then welcome aboard! You have been warned :)
 
-=== 
 
-Need more? Or less? I will gladly build a custom version for you with just the features you want, within reason and as my schedule allows. Your version will not track with the latest version and you won't have to worry about updates. Your first custom version is free with lifetime support (fixing bugs, keeping up with WordPress, resolving conflicts with other plugins, CSS help) but future modifications will have a price tag.
+**Need more? Or less?** I will gladly build a custom version for you with just the features you want, within reason and as my schedule allows. Your version will not track with the latest version and you won't have to worry about updates. Your first custom version is free with lifetime support (fixing bugs, keeping up with WordPress, resolving conflicts with other plugins, CSS help) but future modifications will have a price tag.
 
-===
 
 *We are moving towards version 2.0 with flexible display components!*
 
-= What's New in Version 1.8: Excerpting =
+= What's New in Version 1.8: =
 
 * Improved cycle shortcode options:
   * Show an **excerpt** of a testimonial, or the entire content, or up to a certain length.
@@ -60,17 +56,17 @@ Need more? Or less? I will gladly build a custom version for you with just the f
 
 * Improved i18n. Ready for translations.
 
-= What's New in Version 1.7: Customizing =
+= What's New in Version 1.7: =
 
 * Finally! [Custom fields](http://www.wpmission.com/tutorials/customize-the-form-in-strong-testimonials/). Change the testimonial submission form to meet your needs. Change which client fields appear underneath each testimonial.
 
-= What's New in Version 1.6: Captcha-ing =
+= What's New in Version 1.6: =
 
 * Added support for the [Really Simple Captcha](http://wordpress.org/plugins/really-simple-captcha/) plugin which you may know from [Contact Form 7](http://wordpress.org/plugins/contact-form-7/). Nice!
 
 * Fixed a conflict with other plugins or themes also using the Cycle jQuery plugin.
 
-= What's New in Version 1.5: Cycling =
+= What's New in Version 1.5: =
 
 * A frequently requested feature, a **shortcode for rotating testimonials** on a page just like the widget. AKA slider, fader, cycler.
 * Improved reCAPTCHA error handling.
