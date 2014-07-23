@@ -20,11 +20,9 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes collecting a
 
 **Manage testimonials** just like posts and pages, including Featured Images and Categories.
 
-= Strong Testimonials is a **work in progress**. =
+= Strong Testimonials is a work in progress. =
 
-This is my project for learning plugin development and sharpening my skills. It will always be free.
-
-If you cannot tolerate occasional bugs and frequent updates, then please consider another plugin. 
+This is my project for learning plugin development. It will always be free. If you cannot tolerate occasional bugs and frequent updates, then please consider another plugin. 
 
 On the other hand, if you want
 

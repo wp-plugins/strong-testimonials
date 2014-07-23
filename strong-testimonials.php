@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Plugin Name: Strong Testimonials
  * Plugin URI: http://www.wpmission.com/plugins/strong-testimonials/
