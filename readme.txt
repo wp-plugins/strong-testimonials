@@ -21,32 +21,30 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes testimonials
 > **This is a work in progress.** If you cannot tolerate occasional bugs and frequent updates, then please consider another plugin. 
 
 > On the other hand, if you want: 
-
-> to participate in this plugin's development by offering ideas and feedback,
-
-> the prompt, personal attention of its developer (who will move mountains to resolve issues), 
-
-> popular features that other plugins offer at a price,
-
-> then welcome aboard! You have been warned :)
+(1) to participate in this plugin's development by offering ideas and feedback,
+(2) the prompt, personal attention of its developer (who will move mountains to resolve issues), 
+(3) popular features that other plugins offer at a price,
+then welcome aboard! You have been warned :)
 
 = Coming Soon =
 
-Get involved by voting on feature requests.
-
-A vastly improved version 2.0 with flexible display components!
+* Get involved by voting on feature requests.
+* A vastly improved version 2.0 with flexible display components!
 
 = What's New in Version 1.8 =
 
-Improved **cycle shortcode** options including: showing an **excerpt** of a testimonial, the entire content, or up to a certain length; a "Read more" link to the full testimonial or another page; and options to show the title, the featured image, and the client information or not.
+* Improved **cycle shortcode** options including: 
+  1. showing an **excerpt** of a testimonial, the entire content, or up to a certain length;
+  1. a "Read more" link to the full testimonial or another page;
+	1. options to show the title, the featured image, and the client information or not.
 
-Post Excerpt and Custom Fields now available in testimonial editor.
+* Post Excerpt and Custom Fields now available in the testimonial editor.
 
-Skip loading the included stylesheets if you want to style it from the ground up.
+* Skip loading the included stylesheets if you want to style it from the ground up.
 
-Improved CSS including solving the long-standing width and float conflicts with some themes (YMMV). Tested in many popular themes including the [problematic](http://chrislema.com/wordpress-obesity/) [Avada](http://www.fklein.info/2013/05/overloaded-theme-problems/).
+* Improved CSS including solving the long-standing width and float conflicts with some themes (YMMV). Tested in many popular themes including the [problematic](http://chrislema.com/wordpress-obesity/) [Avada](http://www.fklein.info/2013/05/overloaded-theme-problems/).
 
-Improved i18n. Ready for translations.
+* Improved i18n. Ready for translations.
 
 = What's New in Version 1.7 =
 
@@ -56,10 +54,6 @@ Finally! [Custom fields](http://www.wpmission.com/tutorials/customize-the-form-i
 
 Added support for the [Really Simple Captcha](http://wordpress.org/plugins/really-simple-captcha/) plugin which you may know from [Contact Form 7](http://wordpress.org/plugins/contact-form-7/). Nice!
 Fixed a conflict with other plugins or themes also using the Cycle jQuery plugin.
-
-= What's New in Version 1.5 =
-
-A frequently requested feature, a **shortcode for rotating testimonials** on a page just like the widget.
 
 = Primary Features =
 
