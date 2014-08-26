@@ -21,14 +21,18 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes testimonials
 > **This is a work in progress.** If you cannot tolerate occasional bugs and frequent updates, then please consider another plugin. 
 
 > On the other hand, if you want: 
-> * to participate in this plugin's development by offering ideas and feedback,
-> * the prompt, personal attention of its developer (who will move mountains to resolve issues), 
-> * popular features that other plugins offer at a price,
+
+> to participate in this plugin's development by offering ideas and feedback,
+
+> the prompt, personal attention of its developer (who will move mountains to resolve issues), 
+
+> popular features that other plugins offer at a price,
+
 > then welcome aboard! You have been warned :)
 
 = Coming soon: Get involved by voting on feature requests. =
 
-**We are moving towards a vastly improved version 2.0 with flexible display components!**
+*We are moving towards a vastly improved version 2.0 with flexible display components!*
 
 = What's New in Version 1.8 =
 
