@@ -18,13 +18,6 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes testimonials
 * **Collect** through a customizable form with anti-spam options.
 * **Manage** in the post editor including Featured Images and Categories.
 
-> **This is a work in progress.** If you cannot tolerate occasional bugs and frequent updates, then please consider another plugin. 
-
-> On the other hand, if you want: 
-(1) to participate in this plugin's development by offering ideas and feedback,
-(2) the prompt, personal attention of its developer (who will move mountains to resolve issues), 
-(3) popular features that other plugins offer at a price,
-then welcome aboard! You have been warned :)
 
 = Coming Soon =
 
@@ -36,7 +29,7 @@ then welcome aboard! You have been warned :)
 * Improved **cycle shortcode** options including: 
   1. showing an **excerpt** of a testimonial, the entire content, or up to a certain length;
   1. a "Read more" link to the full testimonial or another page;
-	1. options to show the title, the featured image, and the client information or not.
+  1. options to show the title, the featured image, and the client information or not.
 
 * Post Excerpt and Custom Fields now available in the testimonial editor.
 
