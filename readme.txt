@@ -30,9 +30,11 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes testimonials
 
 > then welcome aboard! You have been warned :)
 
-= Coming soon: Get involved by voting on feature requests. =
+= Coming Soon =
 
-*We are moving towards a vastly improved version 2.0 with flexible display components!*
+Get involved by voting on feature requests.
+
+A vastly improved version 2.0 with flexible display components!
 
 = What's New in Version 1.8 =
 
