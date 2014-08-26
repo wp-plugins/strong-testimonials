@@ -3,7 +3,7 @@ Contributors: cdillon27
 Donate link: http://www.wpmission.com/donate
 Tags: testimonials
 Requires at least: 3.5
-Tested up to: 3.9.1
+Tested up to: 3.9.2
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -18,23 +18,21 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes testimonials
 * **Collect** through a customizable form with anti-spam options.
 * **Manage** in the post editor including Featured Images and Categories.
 
-> **This is a work in progress.** Strong is my project for learning plugin development. It will always be free. If you cannot tolerate occasional bugs and frequent updates, then please consider another plugin. 
+> **This is a work in progress.** If you cannot tolerate occasional bugs and frequent updates, then please consider another plugin. 
 
-> On the other hand, if you want: -- to participate in this plugin's development by offering ideas and feedback, -- the prompt, personal attention of its developer (who will move mountains to resolve issues), -- popular features that other plugins offer at a price, then welcome aboard! You have been warned :)
+> On the other hand, if you want: 
+> * to participate in this plugin's development by offering ideas and feedback,
+> * the prompt, personal attention of its developer (who will move mountains to resolve issues), 
+> * popular features that other plugins offer at a price,
+> then welcome aboard! You have been warned :)
 
-**Need more? Or less?** [Contact me](http://www.wpmission.com/contact) about a custom version. I will make minor changes or remove unwanted features for free with lifetime support (fixing bugs, keeping up with WordPress, resolving conflicts, CSS help) but future modifications will have a price tag. Your version will not track with the current version and you won't have to worry about updates.
+= Coming soon: Get involved by voting on feature requests. =
 
-
-**We are moving towards version 2.0 with flexible display components!**
+**We are moving towards a vastly improved version 2.0 with flexible display components!**
 
 = What's New in Version 1.8 =
 
-Improved cycle shortcode options:
-
-* Show an **excerpt** of a testimonial, or the entire content, or up to a certain length.
-* Add a "Read more" link to the full testimonial or another page.
-* Options to show the title, the featured image, and the client information or not.
-* *Note: the category attribute was removed from the cycle shortcode.*
+Improved **cycle shortcode** options including: showing an **excerpt** of a testimonial, the entire content, or up to a certain length; a "Read more" link to the full testimonial or another page; and options to show the title, the featured image, and the client information or not.
 
 Post Excerpt and Custom Fields now available in testimonial editor.
 
@@ -79,10 +77,44 @@ Strong Testimonials aims to pick up where GC Testimonials left off while maintai
 
 This plugin is under active development and all [ideas and feedback are welcome](http://www.wpmission.com/contact).
 
+= Recommended =
+
+[Simple Custom CSS](https://wordpress.org/plugins/simple-custom-css/) (100% compatible)
+
+= Notes =
+
+The administrator notification email function may not work with [WP Mail SMTP](https://wordpress.org/plugins/wp-mail-smtp/). I am working on this.
+
 = Translations =
 
 Can you help? [Contact me](http://www.wpmission.com/contact/).
 
+== Installation ==
+
+Option A: 
+
+1. Go to `Plugins > Add New`.
+1. Search for "strong testimonials".
+1. Click "Install Now".
+
+Option B: 
+
+1. Download the zip file.
+1. Unzip it on your hard drive.
+1. Upload the `strong-testimonials` folder to the `/wp-content/plugins/` directory.
+
+Option C:
+
+1. Download the zip file.
+1. Upload the zip file via `Plugins > Add New > Upload`.
+
+Finally, activate the plugin.
+
+I apologize for the lack of documentation. Adding features has taken precedence recently.
+
+The default settings are designed to help you hit the ground running. Add the submission form shortcode to a page to start collecting testimonials. You can change the fields on the form in the fields editor. Other shortcodes and widgets allow you to display testimonials in various ways. 
+
+If you have any questions or need help, use the [support forum](http://wordpress.org/support/plugin/strong-testimonials) or [contact me](http://www.wpmission.com/contact/).
 
 == Anti-spam ==
 
@@ -139,7 +171,8 @@ Submission form
 Widget
 
 * Updated [jQuery cycle plugin](http://jquery.malsup.com/cycle2/), conditionally loaded.
-* Break on word boundary, not mid-word, e.g. *"John is an asset . . ."* not *"John is an ass . . ."*
+* Break on word boundary, not mid-word.
+    * e.g. *"John is an asset . . ."* not *"John is an ass . . ."*
 * Improved widget options.
 * Order by: Random, Newest first, Oldest first.
 
