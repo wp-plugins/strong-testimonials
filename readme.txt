@@ -25,13 +25,7 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes testimonials
 
 If you cannot tolerate occasional bugs and frequent updates, then please consider another plugin. 
 
-On the other hand, if you want:
-
-1. to participate in this plugin's development by offering ideas and feedback,
-2. the prompt, personal attention of its developer (who will move mountains to resolve issues), 
-3. popular features that other plugins offer at a price,
-
-then welcome aboard! You have been warned :)
+On the other hand, if you want to participate in this plugin's development and the prompt, personal attention of its developer, then welcome aboard! You have been warned :)
 
 
 = Coming Soon =
@@ -41,21 +35,17 @@ then welcome aboard! You have been warned :)
 
 
 = What's New =
-Some of the latest features:
 
-* A better widget!
-  1. Showing an **excerpt** of a testimonial, the entire content, or up to a certain length;
-  1. a "Read more" link to the full testimonial or another page;
-  1. options to show the title, the featured image, and the client information or not.
-	1. Multiple widgets on a page, each with their own cycle settings.
-	1. Improved slide element handling and container spacing that increases overall compatibility.
+* Both the widget and the cycle shortcode can
+  1. show an **excerpt** of a testimonial, the entire content, or up to a certain length;
+  1. show a "Read more" link to the full testimonial or another page;
+  1. show the title, the featured image, and the client information.
 
-* A better cycle shortcode! 
-  1. Showing an **excerpt** of a testimonial, the entire content, or up to a certain length;
-  1. a "Read more" link to the full testimonial or another page;
-  1. options to show the title, the featured image, and the client information or not.
-
-* Skip loading the included stylesheets if you want to style it from the ground up.
+* The widget also 
+	1. can have multiple widgets on a page, each with their own cycle settings;
+	1. has better slide element handling and container spacing for improved compatibility.
+  
+* You can skip loading the included stylesheets if you want to style it from the ground up.
 
 * Improved theme compatibility (YMMV). Tested in many popular themes including the [problematic](http://chrislema.com/wordpress-obesity/) [Avada](http://www.fklein.info/2013/05/overloaded-theme-problems/).
 
@@ -105,18 +95,13 @@ Notes
 
 = Recommended =
 
-[Simple Custom CSS](http://wordpress.org/plugins/simple-custom-css/) (fully compatible)
-
-[Wider Admin Menu](http://wordpress.org/plugins/wider-admin-menu/) (fully compatible)
-
+* [Simple Custom CSS](http://wordpress.org/plugins/simple-custom-css/) (fully compatible)
+* [Wider Admin Menu](http://wordpress.org/plugins/wider-admin-menu/) (fully compatible)
 
 = Known Conflicts =
 
-[WP Mail SMTP](https://wordpress.org/plugins/wp-mail-smtp/)
-The administrator notification email may not be sent. I am working on this.
-
-[Page Builder by SiteOrigin](http://wordpress.org/support/plugin/siteorigin-panels)
-The widget settings are not being saved properly in the drag-and-drop builder. I am working on this.
+* [WP Mail SMTP](https://wordpress.org/plugins/wp-mail-smtp/) - The administrator notification email may not be sent. I am working on this.
+* [Page Builder by SiteOrigin](http://wordpress.org/support/plugin/siteorigin-panels) - The widget settings are not being saved properly in the drag-and-drop builder. I am working on this.
 
 
 = Translations =
