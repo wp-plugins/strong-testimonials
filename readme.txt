@@ -50,7 +50,7 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes testimonials
 * Multiple **shortcodes** including Cycle, All, Random, and Single.
 * Multiple **widget** options including category selection and random order.
 * Support for **excerpts** in both the cycle shortcode and widgets.
-* Use the WordPress post editor to **add and edit** testimonial content, including **thumbnail support** and **categories**.
+* Use the post editor to **add and edit** testimonial content, including **Featured Images** and **Categories**.
 
 
 = Other Features =
@@ -59,7 +59,6 @@ Strong Testimonials by [WP Mission](http://www.wpmission.com) makes testimonials
 * Skip loading the included stylesheets if you want to style it from the ground up.
 * Tested in many popular themes including the [problematic](http://chrislema.com/wordpress-obesity/) [Avada](http://www.fklein.info/2013/05/overloaded-theme-problems/).
 * Ready for translations (i18n).
-* 
 
 *[Check out the screenshots for a better overview](http://wordpress.org/plugins/strong-testimonials/screenshots/).*
 
