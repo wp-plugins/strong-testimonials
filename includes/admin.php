@@ -4,18 +4,6 @@
  */
 
 
-function wpmtst_debug() {
-	$wpmtst_options = get_option( 'wpmtst_options' );
-	d( $wpmtst_options );
-	
-	$wpmtst_fields = get_option( 'wpmtst_fields' );
-	d( $wpmtst_fields );
-	
-	$wpmtst_cycle = get_option( 'wpmtst_cycle' );
-	d( $wpmtst_cycle );
-}
-
- 
 /*
  * Init
  */
