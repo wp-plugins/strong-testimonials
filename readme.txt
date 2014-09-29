@@ -1,24 +1,24 @@
 === Strong Testimonials ===
 Contributors: cdillon27
-Tags: testimonials
+Tags: testimonials, testimonial widget, random testimonial, testimonial shortcode, testimonial slider
 Requires at least: 3.5
 Tested up to: 4.0
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-A simple yet robust testimonial manager.
+A powerful testimonial manager.
 
 
 == Description ==
 
-Strong Testimonials makes it easy to add testimonials to your site.
+Integrate testimonials in 3 steps:
 
 1. Add a form to a page to **gather** them.
-2. Use the editor to review, organize, and **publish** them.
-3. **Display** them with a variety of shortcodes and widgets.
+2. Use the editor to **review** and organize them.
+3. **Display** them using shortcodes or a widget.
 
-[Demos](http://demos.wpmission.com/strong-testimonials/) | [WP Mission](http://www.wpmission.com)
+[Screenshots](http://wordpress.org/plugins/strong-testimonials/screenshots/) | [Demos](http://demos.wpmission.com/strong-testimonials/) | [Feature Requests](http://www.wpmission.com)
 
 
 **Primary Features**
@@ -31,11 +31,6 @@ Multiple shortcode options including Cycle, All, Random, and Single.
 
 Multiple widget options including category selection and random order.
 
-**Coming Soon**
-
-Get involved by voting on feature requests.
-
-A vastly improved version 2.0 with flexible display components!
 
 **Other Features**
 
@@ -47,17 +42,16 @@ Tested in many popular themes including the [problematic](http://chrislema.com/w
 
 Ready for translations (i18n).
 
-*[Check out the screenshots for a better overview](http://wordpress.org/plugins/strong-testimonials/screenshots/).*
 
 **Anti-Spam**
 
 Instead of reinventing the anti-spam wheel, Strong integrates other plugins to do the heavy lifting. Because spam is heavy and modular is stronger.
 
-Currently supported Captcha plugins:
+Currently supported:
 
-* [Captcha](http://wordpress.org/plugins/captcha/) by BestWebSoft
-* [Really Simple Captcha](http://wordpress.org/plugins/really-simple-captcha/) by Takayuki Miyoshi
-* [Simple reCaptcha](http://wordpress.org/plugins/simple-recaptcha) by WP Mission
+* [Captcha](http://wordpress.org/plugins/captcha/)
+* [Really Simple Captcha](http://wordpress.org/plugins/really-simple-captcha/)
+* [Simple reCaptcha](http://wordpress.org/plugins/simple-recaptcha)
 
 Notes
 
@@ -107,11 +101,11 @@ Option C:
 
 Finally, activate the plugin.
 
-The default settings are designed to help you hit the ground running. 
+<em>The default settings are designed to help you hit the ground running.</em>
 
 * Add the **submission form shortcode** to a page to start gathering testimonials. 
 * You can **change the fields** on the form in the fields editor. 
-* Other **shortcodes and widgets** allow you to display testimonials in various ways. 
+* Use **shortcodes and widgets** to display testimonials in various ways. 
 
 View some examples on the [demo site](http://demos.wpmission.com/strong-testimonials/).
 
@@ -119,6 +113,8 @@ For help, use the [support forum](http://wordpress.org/support/plugin/strong-tes
 
 
 == Frequently Asked Questions ==
+
+[Screenshots](http://wordpress.org/plugins/strong-testimonials/screenshots/) | [Demos](http://demos.wpmission.com/strong-testimonials/) | [Feature Requests](http://www.wpmission.com)
 
 = How do I add a Captcha to the form? =
 
