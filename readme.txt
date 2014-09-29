@@ -21,7 +21,7 @@ Strong Testimonials makes it easy to add testimonials to your site.
 [Demos](http://demos.wpmission.com/strong-testimonials/) | [WP Mission](http://www.wpmission.com)
 
 
-** Primary Features **
+**Primary Features**
 
 A submission form with custom fields and anti-spam options.
 
@@ -31,15 +31,13 @@ Multiple shortcode options including Cycle, All, Random, and Single.
 
 Multiple widget options including category selection and random order.
 
-
-** Coming Soon **
+**Coming Soon**
 
 Get involved by voting on feature requests.
 
 A vastly improved version 2.0 with flexible display components!
 
-
-** Other Features **
+**Other Features**
 
 Administrator notification upon new testimonial submission.
 
@@ -51,8 +49,7 @@ Ready for translations (i18n).
 
 *[Check out the screenshots for a better overview](http://wordpress.org/plugins/strong-testimonials/screenshots/).*
 
-
-** Anti-Spam **
+**Anti-Spam**
 
 Instead of reinventing the anti-spam wheel, Strong integrates other plugins to do the heavy lifting. Because spam is heavy and modular is stronger.
 
@@ -69,7 +66,7 @@ Notes
 * [Contact me](http://www.wpmission.com/contact) if you have a plugin recommendation.
 
 
-** Recommended **
+**Recommended**
 
 These plugins work well with Strong Testimonials and add some nice features.
 * [Admin Menu Post List](http://wordpress.org/plugins/admin-menu-post-list/)
@@ -77,13 +74,13 @@ These plugins work well with Strong Testimonials and add some nice features.
 * [Wider Admin Menu](http://wordpress.org/plugins/wider-admin-menu/)
 
 
-** Known Conflicts **
+**Known Conflicts**
 
 * [Page Builder by SiteOrigin](http://wordpress.org/support/plugin/siteorigin-panels) - The widget settings are not being saved properly in the drag-and-drop builder.
 * [WP Mail SMTP](https://wordpress.org/plugins/wp-mail-smtp/) - The administrator notification email may not be sent.
 
 
-** Translations **
+**Translations**
 
 Can you help? [Contact me](http://www.wpmission.com/contact/).
 
@@ -110,6 +107,7 @@ Option C:
 Finally, activate the plugin.
 
 The default settings are designed to help you hit the ground running. 
+
 * Add the **submission form shortcode** to a page to start gathering testimonials. 
 * You can **change the fields** on the form in the fields editor. 
 * Other **shortcodes and widgets** allow you to display testimonials in various ways. 
@@ -159,9 +157,7 @@ Not yet. If you have a ton of testimonials, you may want to wait.
 
 = Can I make a donation? =
 
-Thanks but I prefer a nice [review](https://wordpress.org/support/view/plugin-reviews/strong-testimonials). Casting a compatibility vote will tell others it works too.
-
-That feedback really helps me understand how people are using my plugins, what works well, and what still needs work.
+Thanks but I prefer a nice [review](https://wordpress.org/support/view/plugin-reviews/strong-testimonials). Casting a compatibility vote will tell others it works too. That feedback really helps me understand how people are using my plugins, what works well, and what still needs work.
 
 = Does anybody read these things? =
 
@@ -186,6 +182,9 @@ That's *my* frequently asked question ;) As a reward for reading this far, leave
 
 
 == Changelog ==
+
+= 1.9.3 =
+* Fix bug.
 
 = 1.9.1 =
 * Added a guide to help new users.
@@ -278,7 +277,7 @@ That's *my* frequently asked question ;) As a reward for reading this far, leave
 
 == Upgrade Notice ==
 
-= 1.9.1 =
+= 1.9.3 =
 Added a guide to help new users.
 
 = 1.9 =
