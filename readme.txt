@@ -69,6 +69,7 @@ Notes
 **Recommended**
 
 These plugins work well with Strong Testimonials and add some nice features.
+
 * [Admin Menu Post List](http://wordpress.org/plugins/admin-menu-post-list/)
 * [Simple Custom CSS](http://wordpress.org/plugins/simple-custom-css/)
 * [Wider Admin Menu](http://wordpress.org/plugins/wider-admin-menu/)
@@ -112,9 +113,9 @@ The default settings are designed to help you hit the ground running.
 * You can **change the fields** on the form in the fields editor. 
 * Other **shortcodes and widgets** allow you to display testimonials in various ways. 
 
-For help, use the [support forum](http://wordpress.org/support/plugin/strong-testimonials) or [contact me](http://www.wpmission.com/contact/).
-
 View some examples on the [demo site](http://demos.wpmission.com/strong-testimonials/).
+
+For help, use the [support forum](http://wordpress.org/support/plugin/strong-testimonials) or [contact me](http://www.wpmission.com/contact/).
 
 
 == Frequently Asked Questions ==
@@ -129,13 +130,11 @@ If the currently selected Captcha plugin is deactivated, the setting will revert
 
 On the `Testimonials > Fields` page, there is a field editor where you can add or remove fields, change field details, and drag-n-drop to reorder them. You can also restore the default fields. 
 
-If you have ever used the Advanced Custom Fields or Custom Field Suite plugins, the editor will be very familiar.
-
-[Tutorial](http://www.wpmission.com/tutorials/customize-the-form-in-strong-testimonials/) | [Support](http://wordpress.org/support/plugin/strong-testimonials) | [Developer](http://www.wpmission.com/contact)
+If you have ever used the Advanced Custom Fields or Custom Field Suite plugins, the editor will be very familiar. Here is a full [tutorial](http://www.wpmission.com/tutorials/customize-the-form-in-strong-testimonials/).
 
 = How can I change which client fields appear below the testimonial? =
 
-On the `Client Section` tab on `Testimonials > Settings` page. Follow the example to build shortcodes based on your custom fields. There is a shortcode for text fields (like a client's name) and a shortcode for links (like a client's website). When in doubt, use the default template provided.
+On the `Client Section` tab on the `Testimonials > Settings` page. Follow the example to build shortcodes based on your custom fields. There is a shortcode for text fields (like a client's name) and a shortcode for links (like a client's website). When in doubt, use the default template provided.
 
 I admit it can greatly improved but I needed to build something quickly to include in version 1.7 with custom fields. This will be replaced with a field editor in an upcoming version.
 
