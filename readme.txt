@@ -161,19 +161,22 @@ That's *my* frequently asked question ;) As a reward for reading this far, leave
 
 == Screenshots ==
 
-1. A sample page of three testimonials including photos.
-2. The widget with a character limit of 200.
-3. The widget without a character limit.
-4. The testimonial submission form without Captcha.
-5. The math Captcha option at the end of the form.
-6. The reCaptcha option at the end of the form.
-7. The settings page.
-8. All the shortcode options.
+1. The form with the default fields.
+2. The form with custom fields.
+3. The [all] shortcode with the default style.
+4. The [all] shortcode with custom CSS.
+5. The widget with a character limit.
+6. The widget without a character limit.
+7. The widget showing random excerpts.
+8. the [cycle] shortcode showing excerpts.
 9. The testimonials admin page.
-10. Adding or editing a testimonial.
-11. Adding or editing categories.
-12. The widget settings in Cycle mode.
-13. The same widget in Static mode.
+10. Settings > General.
+11. Settings > Cycle Shortcode.
+12. Settings > Client Section.
+13. The widget settings.
+14. The custom fields editor.
+15. The shortcode list.
+16. The guide.
 
 
 == Changelog ==
