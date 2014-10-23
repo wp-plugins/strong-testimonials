@@ -20,7 +20,7 @@ Integrate testimonials in 3 steps:
 
 [Screenshots](http://wordpress.org/plugins/strong-testimonials/screenshots/) | [Demos](http://demos.wpmission.com/strong-testimonials/) | [Feature Requests](http://www.wpmission.com)
 
-** What's New **
+**What's New**
 
 The `[strong]` shortcode that does it all.
 
