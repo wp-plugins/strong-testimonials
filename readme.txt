@@ -20,6 +20,14 @@ Integrate testimonials in 3 steps:
 
 [Screenshots](http://wordpress.org/plugins/strong-testimonials/screenshots/) | [Demos](http://demos.wpmission.com/strong-testimonials/) | [Feature Requests](http://www.wpmission.com)
 
+** What's New **
+
+The `[strong]` shortcode that does it all.
+
+Template functions and a default template file.
+
+An updated .pot file for translations.
+
 
 **Primary Features**
 
@@ -159,7 +167,7 @@ Thanks but I prefer a nice [review](https://wordpress.org/support/view/plugin-re
 
 = Does anybody read these things? =
 
-That's *my* frequently asked question ;) As a reward for reading this far, leave a message [here](http://www.wpmission.com/contact) with "I read the FAQs!" in the subject line to receive one hour of WordPress support absolutely free.
+That's *my* frequently asked question ;) As a reward for reading this far, leave a message [here](http://www.wpmission.com/contact) with "I read the FAQs!" in the subject line to receive one hour of WordPress support absolutely free. Use it to customize this plugin, resolve theme & plugin conflicts, site migrations, and so on.
 
 
 == Screenshots ==
@@ -184,7 +192,20 @@ That's *my* frequently asked question ;) As a reward for reading this far, leave
 
 == Changelog ==
 
-= 1.10 =
+= 1.11 2014-10-22 =
+* New [strong] shortcode.
+* New default template file and template functions for use in themes.
+* Add `rel="nofollow"` option for links in client section.
+* Improve conditional loading using is_admin.
+* Use tax_query in shortcode queries instead of get_terms.
+* Move honeypot CSS to page and generify hidden element.
+* Fix server-side validation not adding error classes.
+* Rename char-limit and more-page options to use underscores.
+* Add languages/strong-testimonials.pot file.
+* Make the Guide page translation-ready.
+* Drop `input type="url"` from form until more themes adopt it.
+
+= 1.10 2014-10-07 =
 * Add honeypot spam control.
 * Add category parameter to form shortcode.
 
@@ -282,6 +303,9 @@ That's *my* frequently asked question ;) As a reward for reading this far, leave
 
 == Upgrade Notice ==
 
+= 1.11 =
+Testing new [strong] shortcode. Added template functions and a default template file for use in themes. Added `rel="nofollow"` option. Improved memory usage, queries, honeypots, and server-side form validation. Added a .pot file.
+
 = 1.10 =
 Added honeypot spam control. Added category parameter to form shortcode.
 
@@ -292,7 +316,7 @@ Added a guide to help new users.
 The widget now has the same features as the cycle shortcode, and the cycle process has been made more compatible with other plugins and themes.
 
 = 1.8.1 =
-Fixed a minor bug in Internet Explorer 7 or 8.
+Fixed a minor bug in Internet Explorer 7 and 8.
 
 = 1.8 =
 New features in cycle shortcode: Excerpt and "Read more" link. Solved CSS width and float conflicts with some themes. Ready for translations.
