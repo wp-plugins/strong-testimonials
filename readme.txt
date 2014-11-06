@@ -195,6 +195,7 @@ That's *my* frequently asked question ;) As a reward for reading this far, leave
 == Changelog ==
 
 = 1.11.2 - 2014-11-06 =
+* IMPORTANT SECURITY UPDATE! 
 * Restrict file upload types to jpg, jpeg, jpe, gif, png.
 
 = 1.11.1 - 2014-10-23 =
