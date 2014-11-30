@@ -14,72 +14,71 @@ function wpmtst_restrict_mime( $mimes ) {
 add_filter( 'upload_mimes', 'wpmtst_restrict_mime' );
 
 
-function wpmtst_wp_handle_upload_prefilter( $file ) {
-	return $file;
-}
+// function wpmtst_wp_handle_upload_prefilter( $file ) {
+	// return $file;
+// }
 // add_filter( 'wp_handle_upload_prefilter', 'wpmtst_wp_handle_upload_prefilter' );
 
 
 function wpmtst_form_shortcode( $atts ) {
 	extract( shortcode_atts(
 		array( 
-				'category' => '',
+				'category' => false,
 		),
 		normalize_empty_atts( $atts )
 	) );
 	
 	// explode categories
-	$categories = explode( ',', $category );
+	if ( $category )
+		$categories = explode( ',', $category );
 
-	$options = get_option( 'wpmtst_options' );
+	$options      = get_option( 'wpmtst_options' );
+	$form_options = get_option( 'wpmtst_form_options' );
+	$messages     = $form_options['messages'];
 	
 	$field_options       = get_option( 'wpmtst_fields' );
 	$field_groups        = $field_options['field_groups'];
 	$current_field_group = $field_groups[ $field_options['current_field_group'] ];
 	$fields              = $current_field_group['fields'];
   
-	$captcha         = $options['captcha'];
-	$honeypot_before = $options['honeypot_before'];
-	$honeypot_after  = $options['honeypot_after'];
+	$captcha         = $form_options['captcha'];
+	$honeypot_before = $form_options['honeypot_before'];
+	$honeypot_after  = $form_options['honeypot_after'];
 
 	$errors = array();
 	
 	// Init three arrays: post, post_meta, attachment(s).
 	$testimonial_post = array(
-			'post_status'  => 'pending',
+			'post_status'  => $form_options['post_status'],
 			'post_type'    => 'wpm-testimonial'
 	);
 	$testimonial_meta = array();
-	$testimonial_att = array();
+	$testimonial_att  = array();
 
 	foreach ( $fields as $key => $field ) {
 		$testimonial_inputs[ $field['name'] ] = '';
 	}
 
-	/*
-	 * ------------
-	 * Form Actions
-	 * ------------
-	 */
+	// ------------
+	// Form Actions
+	// ------------
 	if ( isset( $_POST['wpmtst_form_submitted'] ) ) {
 	
 		if ( ! wp_verify_nonce( $_POST['wpmtst_form_submitted'], 'wpmtst_submission_form' ) )
-			die( __( 'There was a problem processing your testimonial.', 'strong-testimonials' ) );
+			die( $messages['submission-error']['text'] );
 
 		if ( $captcha )
 			$errors = wpmtst_captcha_check( $captcha, $errors );
 
-		if ( $options['honeypot_before'] )
+		if ( $honeypot_before )
 			do_action('wpmtst_honeypot_before');
 
-		if ( $options['honeypot_after'] )
+		if ( $honeypot_after )
 			do_action('wpmtst_honeypot_after');
 			
-		/*
-		 * -------------------
-		 * sanitize & validate
-		 * -------------------
-		 */
+		// -------------------
+		// sanitize & validate
+		// -------------------
 		foreach ( $fields as $key => $field ) {
 
 			if ( isset( $field['required'] ) && $field['required'] && empty( $_POST[ $field['name'] ] ) ) {
@@ -117,9 +116,9 @@ function wpmtst_form_shortcode( $atts ) {
 
 		} // foreach $field
 
-		/*
-		 * No missing required fields, carry on.
-		 */
+		//
+		// No missing required fields, carry on.
+		//
     if ( ! count( $errors ) ) {
 		
 			// special handling:
@@ -167,18 +166,20 @@ function wpmtst_form_shortcode( $atts ) {
 			}
 		}
 		
-		/*
-		 * No faulty uploads, carry on.
-		 */
+		//
+		// No faulty uploads, carry on.
+		//
     if ( ! count( $errors ) ) {
 		
 			// create new testimonial post
 			if ( $testimonial_id = wp_insert_post( $testimonial_post ) ) {
 
 				// add to categories
-				$category_success = wp_set_post_terms( $testimonial_id, $categories, 'wpm-testimonial-category' );
-				// @TODO improve error handling
-				// if ( $categories && ! $category_success ) ...
+				if ( $category ) {
+					$category_success = wp_set_post_terms( $testimonial_id, $categories, 'wpm-testimonial-category' );
+					// @TODO improve error handling
+					// if ( $categories && ! $category_success ) ...
+				}
 
 				// save custom fields
 				foreach ( $testimonial_meta as $key => $field ) {
@@ -202,31 +203,31 @@ function wpmtst_form_shortcode( $atts ) {
 			}
 			else {
 				// @TODO Add general error message to top of form.
-				$errors['post'] = __( 'There was a problem processing your testimonial.', 'strong-testimonials' );
+				$errors['post'] = $messages['submission-error']['text'];
 			}
 
 		}
 		
-		/*
-		 * Post inserted successfully, carry on.
-		 */
+		//
+		// Post inserted successfully, carry on.
+		//
 		if ( ! count( $errors ) ) {
 			wpmtst_notify_admin();
-			// wpmtst_notify_admin( $_POST['email'] );
-			return '<div class="testimonial-success">' .  __( 'Thank you! Your testimonial is awaiting moderation.', 'strong-testimonials' ) .'</div>';
+			return '<div class="testimonial-success">' . $messages['submission-success']['text'] .'</div>';
 		}
 		
 		$testimonial_inputs = array_merge( $testimonial_inputs, $testimonial_post, $testimonial_meta );
 
 	}  // if posted
 
+	
 	// ---------------------------
 	// Testimonial Submission Form
 	// ---------------------------
 	// output buffering made this incredibly unreadable
 	
 	$html = '<div id="wpmtst-form">';
-	$html .= '<p class="required-notice"><span class="required symbol"></span>' . __( 'Required Field', 'strong-testimonials' ) . '</p>';
+	$html .= '<p class="required-notice"><span class="required symbol"></span>' . $messages['required-field']['text'] . '</p>';
 	$html .= '<form id="wpmtst-submission-form" method="post" action="" enctype="multipart/form-data">';
 	$html .= wp_nonce_field( 'wpmtst_submission_form', 'wpmtst_form_submitted', true, false );
 
@@ -317,7 +318,7 @@ function wpmtst_form_shortcode( $atts ) {
 
 	} // foreach $field
 
-	if ( $options['honeypot_before'] ) {
+	if ( $honeypot_before ) {
 		$html .= '<style>#wpmtst-form .wpmtst_if_visitor * { display: none !important; visibility: hidden !important; }</style>';
 		$html .= '<span class="wpmtst_if_visitor"><label for="wpmtst_if_visitor">Visitor?</label><input id="wpmtst_if_visitor" type="text" name="wpmtst_if_visitor" size="40" tabindex="-1" autocomplete="off" /></span>';
 	}
@@ -327,7 +328,7 @@ function wpmtst_form_shortcode( $atts ) {
 		$captcha_html = apply_filters( 'wpmtst_captcha', $captcha );
 		if ( $captcha_html ) {
 			$html .= '<div class="wpmtst-captcha">';
-			$html .= '<label for="wpmtst_captcha">' . __( 'Captcha', 'strong-testimonials' ) . '</label><span class="required symbol"></span>';
+			$html .= '<label for="wpmtst_captcha">' . $messages['captcha']['text'] . '</label><span class="required symbol"></span>';
 			$html .= '<div>';
 			$html .= $captcha_html;
 			if ( isset( $errors['captcha'] ) )
@@ -337,15 +338,16 @@ function wpmtst_form_shortcode( $atts ) {
 		}
 	}
 
+	// /* translators: The Submit button on testimonial form.*/
 	$html .= '<p class="form-field">';
 	$html .= '<input type="submit" id="wpmtst_submit_testimonial"'
 				.' name="wpmtst_submit_testimonial"'
-				.' value="' . __( 'Add Testimonial', 'strong-testimonials' ) . '"'
+				.' value="' . $messages['form-submit-button']['text'] . '"'
 				.' class="button" validate="required:true" />';
 	$html .= '</p>';
 	
 	$html .= '</form>';
-	$html .= '</div><!-- wpmtst-form -->';
+	$html .= '</div><!-- wpmtst-form -->' . "\n";
 
 	return $html;
 }
@@ -359,7 +361,8 @@ function wpmtst_honeypot_before() {
 	$value = isset( $_POST['wpmtst_if_visitor'] ) ? $_POST['wpmtst_if_visitor'] : '';
 	if ( isset( $_POST['wpmtst_if_visitor'] ) && ! empty( $_POST['wpmtst_if_visitor'] ) ) {
 		do_action( 'honeypot_before_spam_testimonial', $_POST );
-		die( __( 'There was a problem processing your testimonial.', 'strong-testimonials' ) );
+		$form_options = get_option( 'wpmtst_form_options' );
+		die( $form_options['messages']['submission-error']['text'] );
 	}
 	return;
 }
@@ -371,7 +374,8 @@ function wpmtst_honeypot_before() {
 function wpmtst_honeypot_after() {
 	if ( ! isset ( $_POST['wpmtst_after'] ) ) {
 		do_action( 'honeypot_after_spam_testimonial', $_POST );
-		die( __( 'There was a problem processing your testimonial.', 'strong-testimonials' ) );
+		$form_options = get_option( 'wpmtst_form_options' );
+		die( $form_options['messages']['submission-error']['text'] );
 	}
 	return;
 }

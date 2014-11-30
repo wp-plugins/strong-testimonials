@@ -10,30 +10,31 @@
  * Menus
  */
 function wpmtst_settings_menu() {
-	add_submenu_page( 'edit.php?post_type=wpm-testimonial', // $parent_slug
-										'Settings',                           // $page_title
-										'Settings',                           // $menu_title
-										'manage_options',                     // $capability
-										'settings',                           // $menu_slug
-										'wpmtst_settings_page' );             // $function
+	add_submenu_page( 'edit.php?post_type=wpm-testimonial',     // $parent_slug
+										__( 'Settings', 'strong-testimonials' ),  // $page_title
+										__( 'Settings', 'strong-testimonials' ),  // $menu_title
+										'manage_options',                         // $capability
+										'settings',                               // $menu_slug
+										'wpmtst_settings_page' );                 // $function
 
 	add_submenu_page( 'edit.php?post_type=wpm-testimonial',
-										'Fields',
-										'Fields',
+										__( 'Fields', 'strong-testimonials' ),
+										__( 'Fields', 'strong-testimonials' ),
 										'manage_options',
 										'fields',
 										'wpmtst_settings_custom_fields' );
 
 	add_submenu_page( 'edit.php?post_type=wpm-testimonial',
-										'Shortcodes',
-										'Shortcodes',
+										__( 'Shortcodes', 'strong-testimonials' ),
+										__( 'Shortcodes', 'strong-testimonials' ),
 										'manage_options',
 										'shortcodes',
 										'wpmtst_settings_shortcodes' );
 
 	add_submenu_page( 'edit.php?post_type=wpm-testimonial',
-										'Guide',
-										'<div class="dashicons dashicons-info"></div> Guide',
+										_x( 'Guide', 'noun', 'strong-testimonials' ),
+										/* translators: %s is an icon. */
+										sprintf( _x ('%s Guide', 'noun', 'strong-testimonials' ), '<div class="dashicons dashicons-info"></div>' ),
 										'manage_options',
 										'guide',
 										'wpmtst_guide' );
@@ -80,8 +81,9 @@ add_action( 'admin_menu', 'wpmtst_unique_menu_title', 100 );
  * Register settings
  */
 function wpmtst_register_settings() {
-	register_setting( 'wpmtst-settings-group', 'wpmtst_options', 'wpmtst_sanitize_options' );
-	register_setting( 'wpmtst-cycle-group', 'wpmtst_cycle', 'wpmtst_sanitize_cycle' );
+	register_setting( 'wpmtst-settings-group', 'wpmtst_options',      'wpmtst_sanitize_options' );
+	register_setting( 'wpmtst-cycle-group',    'wpmtst_cycle',        'wpmtst_sanitize_cycle' );
+	register_setting( 'wpmtst-form-group',     'wpmtst_form_options', 'wpmtst_sanitize_form' );
 }
 
 
@@ -90,10 +92,6 @@ function wpmtst_register_settings() {
  */
 function wpmtst_sanitize_options( $input ) {
 	$input['per_page']          = (int) sanitize_text_field( $input['per_page'] );
-	$input['admin_notify']      = isset( $input['admin_notify'] ) ? 1 : 0;
-	$input['admin_email']       = sanitize_email( $input['admin_email'] );
-	$input['honeypot_before']   = isset( $input['honeypot_before'] ) ? 1 : 0;
-	$input['honeypot_after']    = isset( $input['honeypot_after'] ) ? 1 : 0;
 	$input['load_page_style']   = isset( $input['load_page_style'] ) ? 1 : 0;
 	$input['load_widget_style'] = isset( $input['load_widget_style'] ) ? 1 : 0;
 	$input['load_form_style']   = isset( $input['load_form_style'] ) ? 1 : 0;
@@ -129,6 +127,28 @@ function wpmtst_sanitize_cycle( $input ) {
 
 
 /*
+ * Sanitize form settings
+ *
+ * @since 1.13
+ */
+function wpmtst_sanitize_form( $input ) {
+	// an unchecked checkbox is not posted
+	$input['post_status']       = sanitize_text_field( $input['post_status'] );
+	$input['admin_notify']      = isset( $input['admin_notify'] ) ? 1 : 0;
+	$input['admin_email']       = sanitize_email( $input['admin_email'] );
+	$input['honeypot_before']   = isset( $input['honeypot_before'] ) ? 1 : 0;
+	$input['honeypot_after']    = isset( $input['honeypot_after'] ) ? 1 : 0;
+	$input['captcha']           = sanitize_text_field( $input['captcha'] );
+	
+	foreach ( $input['messages'] as $key => $message ) {
+		$input['messages'][$key]['text'] = sanitize_text_field( $message['text'] );
+	}
+	
+	return $input;
+}
+
+
+/*
  * Settings page
  */
 function wpmtst_settings_page() {
@@ -147,24 +167,29 @@ function wpmtst_settings_page() {
 
 		<?php $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'general'; ?>
 		<h2 class="nav-tab-wrapper">
-			<a href="?post_type=wpm-testimonial&page=settings&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General', 'strong-testimonials' ); ?></a>
+			<a href="?post_type=wpm-testimonial&page=settings" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>"><?php _ex( 'General', 'adjective', 'strong-testimonials' ); ?></a>
+			<a href="?post_type=wpm-testimonial&page=settings&tab=form" class="nav-tab <?php echo $active_tab == 'form' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Form', 'strong-testimonials' ); ?></a>
 			<a href="?post_type=wpm-testimonial&page=settings&tab=cycle" class="nav-tab <?php echo $active_tab == 'cycle' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Cycle Shortcode', 'strong-testimonials' ); ?></a>
 			<a href="?post_type=wpm-testimonial&page=settings&tab=client" class="nav-tab <?php echo $active_tab == 'client' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Client Section', 'strong-testimonials' ); ?></a>
 		</h2>
 
-		<form method="post" action="options.php">
+		<form id="<?php echo $active_tab; ?>-form" method="post" action="options.php">
 			<?php
-			if( $active_tab == 'cycle' ) {
-				settings_fields( 'wpmtst-cycle-group' );
-				wpmtst_cycle_section();
+			if( $active_tab == 'form' ) {
+				settings_fields( 'wpmtst-form-group' );
+				wpmtst_form_settings();
 			}
 			elseif( $active_tab == 'client' ) {
 				settings_fields( 'wpmtst-settings-group' );
-				wpmtst_client_section();
+				wpmtst_client_settings();
+			}
+			elseif( $active_tab == 'cycle' ) {
+				settings_fields( 'wpmtst-cycle-group' );
+				wpmtst_cycle_settings();
 			}
 			else {  // general tab
 				settings_fields( 'wpmtst-settings-group' );
-				wpmtst_settings_section();
+				wpmtst_settings();
 			} 
 			?>
 			<p class="submit">
@@ -172,9 +197,8 @@ function wpmtst_settings_page() {
 				<span class="reminder"><?php _e( 'Remember to save changes before switching tabs.', 'strong-testimonials' ); ?></span>
 			</p>
 		</form>
-
+		
 	</div><!-- wrap -->
-
 	<?php
 }
 
@@ -182,8 +206,71 @@ function wpmtst_settings_page() {
 /*
  * General settings
  */
-function wpmtst_settings_section() {
+function wpmtst_settings() {
+	$options = get_option( 'wpmtst_options' );	
+	include( WPMTST_INC . 'form-general-settings.php' );
+}
+
+
+/*
+ * Cycle shortcode settings
+ */
+function wpmtst_cycle_settings() {
+	$cycle = get_option( 'wpmtst_cycle' );
+	
+	// @TODO: de-duplicate (in widget too)
+	$order_list = array(
+			'rand'   => _x( 'Random', 'display order', 'strong-testimonials' ),
+			'recent' => _x( 'Newest first', 'display order', 'strong-testimonials' ),
+			'oldest' => _x( 'Oldest first', 'display order', 'strong-testimonials' ),
+	);
+
+	$category_list = get_terms( 'wpm-testimonial-category', array(
+			'hide_empty' 	=> false,
+			'order_by'		=> 'name',
+			'pad_counts'	=> true
+	) );
+
+	$pages_list = get_pages( array(
+			'sort_order'  => 'ASC',
+			'sort_column' => 'post_title',
+			'post_type'   => 'page',
+			'post_status' => 'publish'
+	) );
+	
+	include( WPMTST_INC . 'form-cycle-settings.php' );
+}
+
+
+/*
+ * Client section settings
+ */
+function wpmtst_client_settings() {
 	$options = get_option( 'wpmtst_options' );
+
+	// ----------------------------
+	// Build list of custom fields.
+	// ----------------------------
+	$field_options = get_option( 'wpmtst_fields' );
+	$field_groups = $field_options['field_groups'];
+	$current_field_group = $field_options['current_field_group'];  // "custom", only one for now
+	$fields = $field_groups[$current_field_group]['fields'];
+	$fields_array = array();
+	foreach ( $fields as $field ) {
+		$field_name = $field['name'];
+		if ( ! in_array( $field['name'], array( 'post_title', 'post_content', 'featured_image' ) ) )
+			$fields_array[] = '<span class="code wide">' . $field['name'] . '</span>';
+	}
+	
+	include( WPMTST_INC . 'form-client-settings.php' );
+}
+
+
+/*
+ * Form settings
+ */
+function wpmtst_form_settings() {
+	$form_options = get_option( 'wpmtst_form_options' );
 
 	// ----------------------------------------
 	// Build list of supported Captcha plugins.
@@ -227,68 +314,14 @@ function wpmtst_settings_section() {
 		
 		// If current Captcha plugin has been deactivated, disable Captcha
 		// so corresponding div does not appear on front-end form.
-		if ( $key == $options['captcha'] && ! $plugins[$key]['active'] ) {
-			$options['captcha'] = '';
-			update_option( 'wpmtst_options', $options );
+		if ( $key == $form_options['captcha'] && ! $plugins[$key]['active'] ) {
+			$form_options['captcha'] = '';
+			update_option( 'wpmtst_form_options', $form_options );
 		}
 		
 	}
-	
-	include( WPMTST_INC . 'form-general-settings.php' );
-}
 
-
-/*
- * Client section settings
- */
-function wpmtst_client_section() {
-	$options = get_option( 'wpmtst_options' );
-
-	// ----------------------------
-	// Build list of custom fields.
-	// ----------------------------
-	$field_options = get_option( 'wpmtst_fields' );
-	$field_groups = $field_options['field_groups'];
-	$current_field_group = $field_options['current_field_group'];  // "custom", only one for now
-	$fields = $field_groups[$current_field_group]['fields'];
-	$fields_array = array();
-	foreach ( $fields as $field ) {
-		$field_name = $field['name'];
-		if ( ! in_array( $field['name'], array( 'post_title', 'post_content', 'featured_image' ) ) )
-			$fields_array[] = '<span class="code wide">' . $field['name'] . '</span>';
-	}
-	
-	include( WPMTST_INC . 'form-client-settings.php' );
-}
-
-
-/*
- * Cycle shortcode settings
- */
-function wpmtst_cycle_section() {
-	$cycle = get_option( 'wpmtst_cycle' );
-	
-	// @TODO: de-duplicate (in widget too)
-	$order_list = array(
-			'rand'   => __( 'Random', 'strong-testimonials' ),
-			'recent' => __( 'Newest first', 'strong-testimonials' ),
-			'oldest' => __( 'Oldest first', 'strong-testimonials' ),
-	);
-
-	$category_list = get_terms( 'wpm-testimonial-category', array(
-			'hide_empty' 	=> false,
-			'order_by'		=> 'name',
-			'pad_counts'	=> true
-	) );
-
-	$pages_list = get_pages( array(
-			'sort_order'  => 'ASC',
-			'sort_column' => 'post_title',
-			'post_type'   => 'page',
-			'post_status' => 'publish'
-	) );
-	
-	include( WPMTST_INC . 'form-cycle-settings.php' );
+	include( WPMTST_INC . 'form-form.php' );
 }
 
 
@@ -322,8 +355,13 @@ function wpmtst_settings_shortcodes() {
 }
 
 
+/*=================================================================*/
+
+
 /*
  * [Restore Default Template] event handler
+ *
+ * @since 1.7.0
  */
 function wpmtst_restore_default_template_script() {
 	?>
@@ -346,6 +384,8 @@ add_action( 'admin_footer', 'wpmtst_restore_default_template_script' );
 
 /*
  * [Restore Default Template] Ajax receiver
+ *
+ * @since 1.7.0
  */
 function wpmtst_restore_default_template_function() {
 	$options = get_option( 'wpmtst_options' );
@@ -354,3 +394,115 @@ function wpmtst_restore_default_template_function() {
 	die();
 }
 add_action( 'wp_ajax_wpmtst_restore_default_template', 'wpmtst_restore_default_template_function' );
+
+
+/*=================================================================*/
+
+
+/*
+ * [Restore Default Messages] event handler
+ *
+ * @since 1.13
+ */
+function wpmtst_restore_default_messages_script() {
+	?>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$("#restore-default-messages").click(function(e){
+			var data = {
+				'action' : 'wpmtst_restore_default_messages',
+			};
+			$.get( ajaxurl, data, function( response ) {
+				var object = JSON.parse( response );
+				for (var key in object) {
+					if (object.hasOwnProperty(key)) {
+						$("input[id='" + key + "']").val( object[key]["text"] );
+					}
+				}
+			});
+		});
+	});
+	</script>
+	<?php
+}
+add_action( 'admin_footer', 'wpmtst_restore_default_messages_script' );
+
+
+/*
+ * [Restore Default Messages] Ajax receiver
+ *
+ * @since 1.13
+ */
+function wpmtst_restore_default_messages_function() {
+	// hard restore from file
+	include( WPMTST_INC . 'defaults.php' );
+	// update_option( 'wpmtst_messages', $default_messages );
+	$messages = $default_messages;
+	echo json_encode( $messages );
+	die();
+}
+add_action( 'wp_ajax_wpmtst_restore_default_messages', 'wpmtst_restore_default_messages_function' );
+
+
+/*=================================================================*/
+
+
+/*
+ * [Restore Default] for single message event handler
+ *
+ * @since 1.13
+ */
+function wpmtst_restore_default_message_script() {
+	?>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".restore-default-message").click(function(e){
+			var input = $(e.target).closest("tr").find("input[type='text']").attr("id");
+			var data = {
+				'action' : 'wpmtst_restore_default_message',
+				'field'  : input,
+			};
+			$.get( ajaxurl, data, function( response ) {
+				var object = JSON.parse( response );
+				$("input[id='" + input + "']").val( object["text"] );
+			});
+		});
+	});
+	</script>
+	<?php
+}
+add_action( 'admin_footer', 'wpmtst_restore_default_message_script' );
+
+
+/*
+ * [Restore Default] for single message Ajax receiver
+ *
+ * @since 1.13
+ */
+function wpmtst_restore_default_message_function() {
+	$input = $_REQUEST['field'];
+	// hard restore from file
+	include( WPMTST_INC . 'defaults.php' );
+	// update_option( 'wpmtst_messages', $default_messages );
+	$message = $default_messages[$input];
+	echo json_encode( $message );
+	die();
+}
+add_action( 'wp_ajax_wpmtst_restore_default_message', 'wpmtst_restore_default_message_function' );
+
+
+/*=================================================================*/
+
+
+function wpmtst_messages_validation_function() {
+	if ( isset( $_REQUEST['tab'] ) && 'messages' == $_REQUEST['tab'] ) {
+		?>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$("#messages-form").validate();
+			});			
+		</script>
+		<?php
+	}
+}
+add_action( 'admin_footer', 'wpmtst_messages_validation_function' );
