@@ -28,10 +28,6 @@ function wpmtst_form_shortcode( $atts ) {
 		normalize_empty_atts( $atts )
 	) );
 	
-	// explode categories
-	if ( $category )
-		$categories = explode( ',', $category );
-
 	$options      = get_option( 'wpmtst_options' );
 	$form_options = get_option( 'wpmtst_form_options' );
 	$messages     = $form_options['messages'];
@@ -44,9 +40,21 @@ function wpmtst_form_shortcode( $atts ) {
 	$captcha         = $form_options['captcha'];
 	$honeypot_before = $form_options['honeypot_before'];
 	$honeypot_after  = $form_options['honeypot_after'];
-
+	if ( $honeypot_before ) {
+		add_action( 'wp_footer', 'wpmtst_honeypot_before_script' );
+		add_action( 'wpmtst_honeypot_before', 'wpmtst_honeypot_before' );
+	}
+	if ( $honeypot_after ) {
+		add_action( 'wp_footer', 'wpmtst_honeypot_after_script' );
+		add_action( 'wpmtst_honeypot_after', 'wpmtst_honeypot_after' );
+	}
+	
 	$errors = array();
 	
+	// explode categories
+	if ( $category )
+		$categories = explode( ',', $category );
+
 	// Init three arrays: post, post_meta, attachment(s).
 	$testimonial_post = array(
 			'post_status'  => $form_options['post_status'],
@@ -358,7 +366,6 @@ add_shortcode( 'wpmtst-form', 'wpmtst_form_shortcode' );
  * Honeypot preprocessor
  */
 function wpmtst_honeypot_before() {
-	$value = isset( $_POST['wpmtst_if_visitor'] ) ? $_POST['wpmtst_if_visitor'] : '';
 	if ( isset( $_POST['wpmtst_if_visitor'] ) && ! empty( $_POST['wpmtst_if_visitor'] ) ) {
 		do_action( 'honeypot_before_spam_testimonial', $_POST );
 		$form_options = get_option( 'wpmtst_form_options' );
@@ -384,8 +391,10 @@ function wpmtst_honeypot_after() {
 /**
  * Honeypot
  */
-function wpmtst_honeypot_before_script() { 
-	?><script type="text/javascript">jQuery('#wpmtst_if_visitor').val('');</script><?php 
+function wpmtst_honeypot_before_script() {
+	?>
+<script type="text/javascript">jQuery('#wpmtst_if_visitor').val('');</script>
+	<?php 
 }
 
 
@@ -393,19 +402,21 @@ function wpmtst_honeypot_before_script() {
  * Honeypot
  */
 function wpmtst_honeypot_after_script() {
-	?><script type="text/javascript">
-( function( $ ) {
-	'use strict';
-	var forms = "#wpmtst-submission-form";
-	$( forms ).submit( function() {
-		$( "<input>" ).attr( "type", "hidden" )
-		.attr( "name", "wpmtst_after" )
-		.attr( "value", "1" )
-		.appendTo( forms );
-		return true;
-	});
-})( jQuery );
-</script><?php
+	?>
+<script type="text/javascript">
+	( function( $ ) {
+		'use strict';
+		var forms = "#wpmtst-submission-form";
+		$( forms ).submit( function() {
+			$( "<input>" ).attr( "type", "hidden" )
+			.attr( "name", "wpmtst_after" )
+			.attr( "value", "1" )
+			.appendTo( forms );
+			return true;
+		});
+	})( jQuery );
+</script>
+	<?php
 }
 
 
@@ -426,11 +437,11 @@ function wpmtst_wp_handle_upload( $file_handler, $overrides ) {
  * Submission form validation.
  */
 function wpmtst_validation_function() {
-	?>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$("#wpmtst-submission-form").validate({});
-		});
-	</script>
+	echo "\r"; ?>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$("#wpmtst-submission-form").validate({});
+	});
+</script>
 	<?php
 }
