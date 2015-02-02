@@ -222,6 +222,9 @@ Thanks but I prefer a nice [review](https://wordpress.org/support/view/plugin-re
 
 == Changelog ==
 
+= 1.14.5 - 2015-02-02 =
+* Fix slideshow pause on hover to work with either version of Cycle.
+
 = 1.14.4 - 2015-01-28 =
 * RTL stylesheet not included by default.
 
@@ -393,6 +396,9 @@ Thanks but I prefer a nice [review](https://wordpress.org/support/view/plugin-re
 
 
 == Upgrade Notice ==
+
+= 1.14.5 - 2015-02-02 =
+* Fixed slideshow pause on hover.
 
 = 1.14.4 =
 * RTL stylesheet not included by default.
