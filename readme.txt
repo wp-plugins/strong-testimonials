@@ -15,61 +15,63 @@ Use your previous customers to bring in new ones with the strong social proof th
 
 How to get started: Add the submission form to a page to start collecting testimonials. Review and organize them into categories. Position them throughout your site using shortcodes, widgets or templates.
 
-**TL;DR**
+= TL;DR =
 
-Categories, excerpts and Featured Images (thumbnails) are supported. Other display options include random order, pagination and slideshows. There's a customizable form with anti-spam options and a notification email. Shortcodes, widgets, and things called blocks. A deep and wide demo site and a developer who's on your side.
+Categories, excerpts and Featured Images (thumbnails) are supported. Other display options include random order, pagination and slideshows. There's a customizable form with anti-spam options and a notification email. Shortcodes, widgets, and template files. A deep and wide demo site and a developer who's on your side.
 
 [Screenshots](http://wordpress.org/plugins/strong-testimonials/screenshots/) | [Demos](http://demos.wpmission.com/strong-testimonials/) | [Feature Requests](http://www.wpmission.com)
 
-**The Form**
+= The Form =
 
-Right out of the box, the testimonial submission form has fields for a name, an email address, a company name and website, a heading, a photo, and of course the testimonial content. Need to add a field? Want to remove one? No problem. Use the fields editor to customize the form to your specific situation, including the field order, the text before or after, the placeholder text, and required fields.
+Right out of the box, the testimonial submission form has fields for a name, an email address, a company name and website, a heading, a photo, and of course the testimonial content. Need to add a field? Want to remove one? No problem. Use the fields editor to **customize the form** to your specific situation, including the field order, the text before or after, the placeholder text, and required fields.
 
-<blockquote>Example: A dog trainer serving a wide geographical area added fields for the dog's name to the form which encouraged people to upload pictures of their dog instead of themselves! Displaying the city demonstrated her willingness to travel near and far to help dog owners.</blockquote>
+<blockquote>Example: A dog trainer serving a wide geographical area added fields for the dog's name to the form which encouraged people to upload pictures of their dog instead of themselves! Displaying the city demonstrated her willingness to travel near and far to help dog owners.
+</blockquote>
 
-The form also offer anti-spam options like honeypots and Captcha via these plugins: [Captcha](http://wordpress.org/plugins/captcha/), [Really Simple Captcha](http://wordpress.org/plugins/really-simple-captcha/), [Simple reCaptcha](http://wordpress.org/plugins/simple-recaptcha). The form messages for the required fields, the success and error messages, and even the Submit button are customizable too. It's pretty cool.
+The form also offer **anti-spam** options like honeypots and Captcha via these plugins: [Captcha](http://wordpress.org/plugins/captcha/), [Really Simple Captcha](http://wordpress.org/plugins/really-simple-captcha/), [Simple reCaptcha](http://wordpress.org/plugins/simple-recaptcha). The form messages for the required fields, the success and error messages, and even the Submit button are customizable too. It's pretty cool.
 
-**Review, Organize, Publish**
+= Review, Organize, Publish =
 
-Testimonials are a custom post type that uses the standard post editor, so no new UI to learn there. Just like posts, they can be organized into categories for easy segmentation. Categories are by far the best way to show the right testimonials on the right page and to spread them out across the breadth of your site.
+Testimonials are a custom post type that uses the standard post editor, so no new UI to learn there. Just like posts, they can be organized into **categories** for easy segmentation. Categories are by far the best way to show the right testimonials on the right page and to spread them out across the breadth of your site.
 
-Submitted testimonials will be in Pending status by default or they can be published immediately (use with caution!). You can send a notification email to the site administrator (or any email address) with submission details.
+Submitted testimonials will be in Pending status by default or they can be published immediately (use with caution!). You can send a **notification email** to the site administrator (or any email address) with submission details.
 
-**Show Them Off**
+= Show Them Off =
 
 Show the newest first, the oldest first or in random order. Show one, ten or all of them. Show the full testimonial, the excerpt or up to a specified length - which is great when you have both long and short testimonials. 
 
 With the excerpt and short version options, you can add a "Read more" link to the full testimonial, which works well when you have long testimonials that really tell a story and when you have prospects that do their due diligence and read every word on your site.
 
-There are a ton of benefits to this approach. Viewing the full testimonial uses the single post template in your theme (or a custom version) so your site's look and feel remains the same, including the previous/next post links if used in your theme. That consistency reflects back on you and only adds to the (hopefully) positive experience your visitors have on your site.
+*There are a ton of benefits to this approach. Viewing the full testimonial uses the single post template in your theme (or a custom version) so your site's look and feel remains the same, including the previous/next post links if used in your theme. That consistency reflects back on you and only adds to the (hopefully) positive experience your visitors have on your site.*
 
 Many people sprinkle testimonials around their site and add a link to their full testimonials page. That's a great way to pique someone's interest without bombarding them with all of them up front.
 
-When you have more than ten or so testimonials, a popular approach is to paginate them, only showing 5-10 per page. The plugin offers simple pagination controls (1 2 3 ...) that can be placed above and below the testimonial group.
+When you have more than ten or so testimonials, a popular approach is to **paginate them**, only showing 5-10 per page. The plugin offers simple pagination controls (1 2 3 ...) that can be placed above and below the testimonial group.
 
-<blockquote>Example: A computer repair guy in business for 15 years had hundreds(!) of wonderful testimonials. Fearing a mammoth page of testimonials would, at best, never be read and, at worst, turn people off, he organized them into categories by year and by service (hardware, network, mobile, etc.). Paginating them allowed people to take their time flipping through them. For the kicker, he compiled the top ten spanning all his years in business into another page so his prospects would quickly appreciate his longevity and experience. A nice balance of quick-and-to-the-point and here's-the-whole-story.</blockquote>
+<blockquote>Example: A computer repair guy in business for 15 years had hundreds(!) of wonderful testimonials. Fearing a mammoth page of testimonials would, at best, never be read and, at worst, turn people off, he organized them into categories by year and by service (hardware, network, mobile, etc.). Paginating them allowed people to take their time flipping through them. For the kicker, he compiled the top ten spanning all his years in business into another page so his prospects would quickly appreciate his longevity and experience. A nice balance of quick-and-to-the-point and here's-the-whole-story.
+</blockquote>
 
-**Slideshow**
+= Slideshow =
 
 A well-thought-out slideshow can be a great selling aide and looks great on an otherwise static page or sidebar without being distracting. Use the Excerpt feature to craft quick and simple one-liners that tell prospects exactly what they need to hear from your previous customers. [Really make it sing](http://demos.wpmission.com/strong-testimonials/examples/excerpt-slideshow/) with the Featured Image.
 
 Both the shortcode and the widget can be a slideshow. Multiple slideshows can be used on the same page by a shortcode or widget with different styles and speeds. *(Can other testimonial plugins say that?)*
 
-**Style**
+= Style =
 
 Testimonial plugins typically offer either no styling at all or a handful of predefined layouts that may or may not look good in your theme.
 
 Strong Testimonials offers one layout for the shortcode and one for the widget inherited from the original version (GC Testimonials) that is just generic enough to look good in most cases with maybe a few tweaks (I always remove the gradient background ;)). 
 
-Its stylesheets are largely structural and can be easily overridden by your theme or a plugin like Simple Custom CSS. You can also skip loading each stylesheet (page, widget, form) and let your theme handle it from the ground up.
+Its stylesheets are largely structural and can be easily overridden by your theme or a plugin like [Simple Custom CSS](https://wordpress.org/plugins/simple-custom-css/). You can also skip loading each stylesheet (page, widget, form) and let your theme handle it from the ground up.
 
 In fact, for any plugin that affects output, I draw the line at around five CSS overrides. Any more than that and I skip its stylesheet and start from scratch. More work up front but easier to maintain long-term. Just my two cents.
 
-Need help matching your theme? Got some weird spacing or floating? I'm here to help.
+*Need help matching your theme? Got some weird spacing or floating? I'm here to help.*
 
-For ultimate control and seamless integration with your theme, the plugin also offers template files for pages, the widget and the form. Simply copy the template file to your theme, modify as you see fit, and WordPress will automagically find it. (Tutorial coming soon.)
+For ultimate control and seamless integration with your theme, the plugin also offers **template files** for pages, the widget and the form. (Tutorial coming soon.)
 
-**One shortcode to rule them all.**
+= One shortcode to rule them all. =
 
 The `[strong]` shortcode is unique and versatile. Most attributes act as on/off switches. For example, `[strong title random]` means "show testimonials and their title in random order".
 
@@ -86,20 +88,21 @@ Other shortcode examples:
 [strong slideshow show_for="5" effect_for="1" length="200"]
 `
 `
-[strong thumbnail random excerpt more_post more_text="more..." count="3" class="three-across"]
+[strong thumbnail random excerpt more_post more_text="more..."
+ count="3" class="three-across"]
 `
 
-Learning a new plugin, especially one that makes heavy use of shortcodes and attributes, can seem like learning Klingon. If you have any trouble, take it one bite at a time with the demo site as your guide. By all means, use the support forum for help or contact me directly. You will be fluent soon!
+Learning a new plugin, especially one that makes heavy use of shortcodes and attributes, can seem like learning Klingon. If you have any trouble, take it one bite at a time with the [demo site](http://demos.wpmission.com/strong-testimonials/the-strong-shortcode/full-attribute-list/) as your guide. By all means, use the support forum for help or contact me directly. You will be fluent soon!
 
-**Translations**
+= Translations =
 
 The plugin includes a POT file and Hebrew, Russian, Spanish and Swedish translations. It is currently undergoing testing by the generous folks at WPML who will recommend how to make it WPML-compatible.
 
-**Support**
+= Support =
 
 As a technical support veteran and seasoned developer, I am dedicated to your success. I will move mountains to fix bugs, to resolve conflicts with other plugins and themes, and to craft elegant solutions to fragile workarounds. Just ask [Grant](https://wordpress.org/support/topic/great-support-308?replies=2), [hnrocket](https://wordpress.org/support/topic/effective-great-support?replies=2) and [Anna](https://wordpress.org/support/topic/awesome-support-and-solid-plug-in?replies=2).
 
-**Future**
+= Future =
 
 As Strong Testimonials grows, I want it to remain simple enough for beginners yet robust enough for pros. I embrace the challenge.
 
@@ -107,7 +110,7 @@ There is a long list of feature requests and new ones come in every week. I love
 
 Please keep in mind the original scope of this plugin: to showcase customer testimonials on your site. There are several variations of that and I'm open to hearing them all but I will not throw in everything but the kitchen sink. I believe in the WordPress philosophy and that form follows function.
 
-**The Point**
+= The Point =
 
 Putting yourself in the shoes of your prospect may not always be easy but the dividends are clear: Well-planned, well-organized and well-placed testimonials will contribute much more to your site's overall message and hopefully will help convert more prospects into customers than simply throwing a spinning widget in sidebar.
 
@@ -115,7 +118,7 @@ And that's my goal: to build a strong yet flexible tool to help you do that.
 
 [Screenshots](http://wordpress.org/plugins/strong-testimonials/screenshots/) | [Demos](http://demos.wpmission.com/strong-testimonials/) | [Feature Requests](http://www.wpmission.com)
 
-**The Weaknesses**
+= The Weaknesses =
 
 The `[strong]` shortcode can be overwhelming at first. There's no shortcode builder thingy in the page editor but I am working on a better solution.
 
@@ -125,7 +128,7 @@ The admin pages for the original shortcodes and settings are mixed in with the a
 
 The template files and functions can be vastly improved.
 
-**Recommended**
+= Recommended =
 
 These plugins work well with Strong Testimonials and add some nice features.
 
@@ -134,11 +137,11 @@ These plugins work well with Strong Testimonials and add some nice features.
 * [Simple Custom CSS](http://wordpress.org/plugins/simple-custom-css/) is my go-to plugin for quick CSS fixes.
 * [Wider Admin Menu](http://wordpress.org/plugins/wider-admin-menu/) lets your admin menu breathe.
 
-**Known Conflicts**
+= Known Conflicts =
 
 * [Page Builder 1.x by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/) - The widget settings are not being saved properly in the drag-and-drop builder. Update to the excellent Page Builder 2.x if possible.
 
-**Translations**
+= Translations =
 
 In version 1.13+:
 
@@ -209,7 +212,7 @@ My plan is to build a tool that allows you to configure a testimonial display co
 
 The `[strong]` shortcode uses a template file that can be copied into your theme. You can create multiple template files and include them using a shortcode attribute; e.g. `template="my-template"`. Template functions are also available for adding testimonial fields to new or existing templates.
 
-The original `[wpmtst]` shortcodes do not use template files, but the stylesheets are largely structural so you can add CSS in your theme or [custom CSS](http://wordpress.org/plugins/simple-custom-css/). In fact, I like to skip loading the stylesheets (in `Testimonials > Settings`) to see how they look in the theme, then style up from there. Future versions will have pre-built templates with adjustable colors, borders, etc.
+The original `[wpmtst]` shortcodes do not use template files, but the stylesheets are largely structural so you can add CSS in your theme. In fact, I like to skip loading the stylesheets (in `Testimonials > Settings`) to see how they look in the theme, then style up from there. 
 
 
 = How can I change "testimonial" to "review", for example? =
