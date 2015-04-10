@@ -33,10 +33,17 @@ function wpmtst_settings_menu() {
 
 	add_submenu_page( 'edit.php?post_type=wpm-testimonial',
 										_x( 'Guide', 'noun', 'strong-testimonials' ),
-										_x ('Guide', 'noun', 'strong-testimonials' ),
+										_x('Guide', 'noun', 'strong-testimonials' ),
 										'manage_options',
 										'guide',
 										'wpmtst_guide' );
+										
+	add_submenu_page( 'edit.php?post_type=wpm-testimonial',
+										__( 'News', 'strong-testimonials' ),
+										__( 'News', 'strong-testimonials' ),
+										'manage_options',
+										'news',
+										'wpmtst_news' );
 										
 	add_action( 'admin_init', 'wpmtst_register_settings' );
 }
@@ -94,6 +101,7 @@ function wpmtst_sanitize_options( $input ) {
 	$input['load_widget_style'] = isset( $input['load_widget_style'] ) ? 1 : 0;
 	$input['load_form_style']   = isset( $input['load_form_style'] ) ? 1 : 0;
 	$input['load_rtl_style']    = isset( $input['load_rtl_style'] ) ? 1 : 0;
+	$input['reorder']           = isset( $input['reorder'] ) ? 1 : 0;
 	return $input;
 }
 
@@ -176,21 +184,13 @@ function wpmtst_settings_page() {
 			</div>
 		<?php endif; ?>
 
-		<?php $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'news'; ?>
+		<?php $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'general'; ?>
 		<h2 class="nav-tab-wrapper">
-			<a href="?post_type=wpm-testimonial&page=settings" class="nav-tab <?php echo $active_tab == 'news' ? 'nav-tab-active' : ''; ?>"><?php _e( 'News', 'strong-testimonials' ); ?></a>
 			<a href="?post_type=wpm-testimonial&page=settings&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>"><?php _ex( 'General', 'adjective', 'strong-testimonials' ); ?></a>
 			<a href="?post_type=wpm-testimonial&page=settings&tab=form" class="nav-tab <?php echo $active_tab == 'form' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Form', 'strong-testimonials' ); ?></a>
 			<a href="?post_type=wpm-testimonial&page=settings&tab=cycle" class="nav-tab <?php echo $active_tab == 'cycle' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Cycle Shortcode', 'strong-testimonials' ); ?></a>
 			<a href="?post_type=wpm-testimonial&page=settings&tab=client" class="nav-tab <?php echo $active_tab == 'client' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Client Section', 'strong-testimonials' ); ?></a>
 		</h2>
-		
-		<?php
-		if ( 'news' == $active_tab ) {
-			wpmtst_news();
-			return;
-		}
-		?>
 		
 		<form id="<?php echo $active_tab; ?>-form" method="post" action="options.php">
 			<?php
@@ -226,7 +226,7 @@ function wpmtst_settings_page() {
  * News page
  */
 function wpmtst_news() {
-	include( WPMTST_INC . 'settings-news.php' );
+	include( WPMTST_INC . 'news.php' );
 }
 
 
@@ -248,6 +248,7 @@ function wpmtst_cycle_settings() {
 	// @TODO: de-duplicate (in widget too)
 	$order_list = array(
 			'rand'   => _x( 'Random', 'display order', 'strong-testimonials' ),
+			'menu'   => _x( 'Menu Order', 'display order', 'strong-testimonials' ),
 			'recent' => _x( 'Newest first', 'display order', 'strong-testimonials' ),
 			'oldest' => _x( 'Oldest first', 'display order', 'strong-testimonials' ),
 	);

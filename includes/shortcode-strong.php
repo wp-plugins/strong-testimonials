@@ -55,13 +55,13 @@ function wpmtst_strong_shortcode( $atts, $content = null, $parent_tag ) {
 				'category' => '',
 				'class' => '',
 				'template' => '',
-				'no_stylesheet' => '',
 				
 				// display loop attributes
 				'count' => -1,
 				'per_page' => '',
 				'nav' => 'after',
 				'id' => '',
+				'menu_order' => '',  // @since 1.16
 				'random' => '',
 				'newest' => '',
 				'oldest' => '',
@@ -81,8 +81,6 @@ function wpmtst_strong_shortcode( $atts, $content = null, $parent_tag ) {
 				// read more link attributes
 				// 'class' => '',
 				'page' => '',
-				
-				'order_in_page' => 0,
 		),
 		normalize_empty_atts( $atts ), 
 		$parent_tag
@@ -136,7 +134,6 @@ function wpmtst_strong_shortcode( $atts, $content = null, $parent_tag ) {
 	$args = array(
 			'post_type'      => 'wpm-testimonial',
 			'posts_per_page' => $count,
-			'orderby'        => 'menu_order',
 			'post_status'    => 'publish',
 	);
 	
@@ -155,10 +152,12 @@ function wpmtst_strong_shortcode( $atts, $content = null, $parent_tag ) {
 	}
 	
 	// order by
-	if ( $random ) {
-		$args['orderby'] = 'rand';
+	if ( $menu_order ) {
+		$args['orderby'] = 'menu_order';
+		$args['order']   = 'ASC';
 	}
 	else {
+		$args['orderby'] = 'post_date';
 		if ( $newest )
 			$args['order'] = 'DESC';
 		else 
@@ -168,6 +167,15 @@ function wpmtst_strong_shortcode( $atts, $content = null, $parent_tag ) {
 	// query
 	$query = new WP_Query( $args );
 	$post_count = $query->post_count;
+	
+	/**
+	 * Shuffle array in PHP instead of SQL.
+	 * 
+	 * @since 1.16
+	 */
+	if ( $random ) {
+		shuffle( $query->posts );
+	}
 	
 	// ===================
 	// SUB-MODE: SLIDESHOW
